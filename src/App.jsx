@@ -8,7 +8,9 @@ function App() {
 
   return (
     <>
-      Home page
+      To Do: 
+      <br />
+      Code everything
     </>
   )
 }
