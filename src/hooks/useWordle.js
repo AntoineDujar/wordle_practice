@@ -18,23 +18,25 @@ const useWorldle = ({solution}) => {
 
   //game over state
   const [isCorrect, setIsCorrect] = useState(false);
-}
 
-//methods of recurring game logic
+  //methods of recurring game logic
+  
+  const formatGuess = {
+    //TO DO>
+    //function to format guess and determine colour of tile
+  }
+  
+  const addNewGuess = {
+    //TO DO:
+    //function to add new guess to guesses array and update history, increment turn counter and check isCorrect
+  }
+  
+  const handleKeyup = {
+    //TO DO:
+    //function to handle key events, track current guess, trigger addNewGuess
+  }
 
-const formatGuess = {
-  //TO DO>
-  //function to format guess and determine colour of tile
-}
-
-const addNewGuess = {
-  //TO DO:
-  //function to add new guess to guesses array and update history, increment turn counter and check isCorrect
-}
-
-const handleKeyup = {
-  //TO DO:
-  //function to handle key events, track current guess, trigger addNewGuess
+  return {turn, currnetGuess, guesses, history, isCorrect, handleKeyup}
 }
 
 export default useWorldle;
