@@ -2,7 +2,13 @@ import React from 'react'
 
 const Row = () => {
   return (
-    <div>Row</div>
+    <div className='row'>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
   )
 }
 

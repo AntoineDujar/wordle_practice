@@ -10,22 +10,25 @@
     (x) project structure/outline - Dan
     ( ) title Bar -
 
-    (p) game logic - Dan/Ant 
-    ( )   -> track current guess
-    ( )   -> submit and format guess (check for colours)
-    ( )   -> add new guesses
-    ( )   -> history tracking
-    ( )   -> check win condition
+    ( ) function to fetch solutions -
 
-    (p)  - components
-    ( )    -> grid
-    ( )    -> row
+    (p) game logic (useWordle hook) - Dan/Ant 
+    (p)   -> track current guess
+    (p)   -> submit and format guess (check for colours)
+    (p)   -> add new guesses
+    (p)   -> history tracking
+    (p)   -> check win condition
+
+    (p)  - components (individual files)
+    (p)    -> wordle
+    (p)    -> grid
+    (p)    -> row
     ( )    -> tile
     ( )    -> keyboard
     ( )    -> modal (for win/lose condition)
-    ( )    -> styles for all above
+    (p)    -> styles for all above (index.css)
 
-    ( )  - animations 
+    ( )  - animations (index.css)
     ( )   -> tiles
     ( )   -> used keys
     ( )   -> game win/lose

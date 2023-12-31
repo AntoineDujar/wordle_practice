@@ -1,9 +1,13 @@
-import React from 'react'
+import React from 'react';
+import Row from './Row';
 
-const Grid = () => {
+export default function Grid({guesses, currentGuess, turn}) {
   return (
-    <div>Grid</div>
+    <div>
+      {/*map over rows */ }
+      {guesses.map((guess, index) => {
+        return <Row key={index} />
+      })}
+    </div>
   )
 }
-
-export default Grid
