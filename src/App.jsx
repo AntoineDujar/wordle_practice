@@ -1,13 +1,12 @@
 import { useState } from 'react';
 import './App.css';
+import { Grid, Keyboard, Row, Modal, Wordle } from './components';
 
 function App() {
 
   return (
     <>
-      To Do : 
-      <br />
-      Code everything
+      <h1>Wordle</h1>
     </>
   )
 }
