@@ -1,14 +1,33 @@
 # Wordle clone as practice for react
 
-5 letter, 6 guesses
+  5 letters, 6 guesses
 
-# React + Vite
+  Project To Do:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+    ( ) - not done | (x) - done | (p) - in progress
+ 
+    (x) repo init - Ant
+    (x) project structure/outline - Dan
+    ( ) title Bar -
 
-Currently, two official plugins are available:
+    (p) game logic - Dan/Ant 
+    ( )   -> track current guess
+    ( )   -> submit and format guess (check for colours)
+    ( )   -> add new guesses
+    ( )   -> history tracking
+    ( )   -> check win condition
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+    (p)  - components
+    ( )    -> grid
+    ( )    -> row
+    ( )    -> tile
+    ( )    -> keyboard
+    ( )    -> modal (for win/lose condition)
+    ( )    -> styles for all above
 
-Yep!
+    ( )  - animations 
+    ( )   -> tiles
+    ( )   -> used keys
+    ( )   -> game win/lose
+
+#
