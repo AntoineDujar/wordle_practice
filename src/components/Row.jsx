@@ -2,6 +2,7 @@ import React from 'react'
 
 const Row = ({guess, currentGuess}) => {
 
+  //when row receieves a guess via props, render it
   if(guess){
     return (
       <div className='row past'>
@@ -11,7 +12,8 @@ const Row = ({guess, currentGuess}) => {
       </div>
     )
   }
-
+  
+  //display current guess on current row
   if(currentGuess){
     let letters = currentGuess.split('');
 
@@ -28,7 +30,7 @@ const Row = ({guess, currentGuess}) => {
   }
 
 
-
+  //on mount render 5 empty rows
   return (
     <div className='row'>
       <div></div>
