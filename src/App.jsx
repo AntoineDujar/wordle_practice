@@ -12,10 +12,13 @@ function App() {
   // fetch solution 
   }, [])
 
+  let input = ""
+
   return (
     <div className='App'>
       <h1>WORDLE</h1>
       <Wordle solution={solution} />
+      <Keyboard input={input} />
     </div>
   )
 }
