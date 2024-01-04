@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from "react";
+import { useEffect } from 'react';
 
 const Keyboard = (props) => {
   const [input, setInput] = useState('');
@@ -8,7 +9,24 @@ const Keyboard = (props) => {
     row0: ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
     row1: ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'],
     row2: ['z', 'x', 'c', 'v', 'b', 'n', 'm']
-};
+  };
+
+  const handleKeyPress = (event) => {
+    const keyPressed = event.key
+    const isAlpha = /^[a-zA-Z]$/;
+    if (isAlpha.test(keyPressed)) {
+      const temp = input + keyPressed
+      setInput(temp);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('keydown', handleKeyPress);
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyPress);
+    };
+  }, [input]);
 
 
   return (
