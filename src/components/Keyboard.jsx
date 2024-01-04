@@ -6,9 +6,21 @@ const Keyboard = (props) => {
   // keyboard input from onscreen and physical
   const [input, setInput] = useState('');
 
-  const row0 = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p']
-  const row1 = ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l']
-  const row2 = ['z', 'x', 'c', 'v', 'b', 'n', 'm']
+  const row0 = {
+    id: 0,
+    content: ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p']
+  }
+  const row1 = {
+    id: 1,
+    content: ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l']
+  }
+  const row2 = {
+    id: 2,
+    content: ['z', 'x', 'c', 'v', 'b', 'n', 'm']
+  }
+  // const row0 = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p']
+  // const row1 = ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l']
+  // const row2 = ['z', 'x', 'c', 'v', 'b', 'n', 'm']
   const qwertyKeyboard = [row0, row1, row2]
 
   // Handling physical keyboard input, use regular expression to filter non letters
@@ -36,9 +48,9 @@ const Keyboard = (props) => {
     <>
       <p>keyboard input: {input}</p>
       
-      {qwertyKeyboard.map((row, rowIndex) => (
-        <div key={rowIndex}>
-          {row.map((letter) => (
+      {qwertyKeyboard.map((row) => (
+        <div key={row.id}>
+          {row.content.map((letter) => (
             <button key={letter} onClick={() => setInput(input + letter)}>
               {letter}
             </button>
