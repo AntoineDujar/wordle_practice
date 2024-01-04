@@ -24,7 +24,7 @@
     (p)    -> grid
     (p)    -> row
     ( )    -> tile
-    ( )    -> keyboard
+    (p)    -> keyboard
     ( )    -> modal (for win/lose condition)
     (p)    -> styles for all above (index.css)
 
