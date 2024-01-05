@@ -35,6 +35,7 @@
     ( )   -> tiles
     ( )   -> used keys
     ( )   -> game win/lose
+    ( )   -> colours on keyboard match (gray, yellow, green)
 
 
     *** TO USE JSON SERVER ***

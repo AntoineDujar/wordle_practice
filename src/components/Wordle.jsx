@@ -18,6 +18,14 @@ export default function Wordle ({ solution }) {
       const temp = input + keyPressed
       setInput(temp);
     }
+
+    // TODO:
+    //check if enter press
+    // if so, addNewGuess
+    //check length of word
+    //guess appears on current row
+    //check for duplicate words
+
   };
 
   //event listener for key events

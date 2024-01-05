@@ -71,6 +71,8 @@ const useWordle = ({solution}) => {
     })
 
     setCurrentGuess('');
+
+    //formatGuess();
   }
     
   

@@ -23,7 +23,6 @@ function App() {
     <div className='App'>
       <h1>WORDLE</h1>
       <Wordle solution={solution} />
-      <Keyboard input={input} />
     </div>
   )
 }
