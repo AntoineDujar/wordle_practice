@@ -21,6 +21,7 @@
 
     (p)  - components (individual files)
     (p)    -> wordle
+    (p)     -> handleSubmit 
     (p)    -> grid
     (p)    -> row
     ( )    -> tile
