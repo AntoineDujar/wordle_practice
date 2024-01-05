@@ -37,6 +37,6 @@
     *** TO USE JSON SERVER ***
     open windows powershell as admin, run command "Set-ExecutionPolicy Unrestricted", after select y
 
-    command to start json server (can be donw in vs code terminal) 
+    command to start json server (can be done in vs code terminal) 
     json-server ./data/db.json --port 3001 (or whatever port you want)
 #

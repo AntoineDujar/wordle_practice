@@ -7,6 +7,7 @@ function App() {
   //state to keep track of current solution
   const [solution, setSolution] = useState(null);
 
+  //fetch a random word from json server
   useEffect(() => {
   fetch('http://localhost:3001/solutions')
     .then(res => res.json())
