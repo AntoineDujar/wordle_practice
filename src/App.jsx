@@ -5,12 +5,16 @@ import { Grid, Keyboard, Row, Modal, Wordle } from './components';
 function App() {
 
   //state to keep track of current solution
-  const [solution, setSolution] = useState('smart')
+  const [solution, setSolution] = useState(null);
 
   useEffect(() => {
-  //to do
-  // fetch solution 
-  }, [])
+  fetch('http://localhost:3001/solutions')
+    .then(res => res.json())
+    .then(json =>{
+      const randomSolution = json[Math.floor(Math.random() * json.length)]
+      setSolution(randomSolution);
+    })
+  }, [setSolution])
 
   let input = ""
 

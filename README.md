@@ -10,7 +10,7 @@
     (x) project structure/outline - Dan
     ( ) title Bar -
 
-    ( ) function to fetch solutions -
+    (p) function to fetch solutions -
 
     (p) game logic (useWordle hook) - Dan/Ant 
     (p)   -> track current guess
@@ -33,4 +33,10 @@
     ( )   -> used keys
     ( )   -> game win/lose
 
+
+    *** TO USE JSON SERVER ***
+    open windows powershell as admin, run command "Set-ExecutionPolicy Unrestricted", after select y
+
+    command to start json server (can be donw in vs code terminal) 
+    json-server ./data/db.json --port 3001 (or whatever port you want)
 #
