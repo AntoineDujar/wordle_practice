@@ -23,10 +23,12 @@
     (p)    -> wordle
     (p)    -> grid
     (p)    -> row
-    ( )    -> tile
-    (p)    -> keyboard
+    ( )    -> tile -Ant
+    (p)    -> keyboard (add backspace, enter keys (submit current word)) -Ant
     ( )    -> modal (for win/lose condition)
     (p)    -> styles for all above (index.css)
+    ( )    -> 
+
 
     ( )  - animations (index.css)
     ( )   -> tiles
