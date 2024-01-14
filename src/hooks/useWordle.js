@@ -19,6 +19,9 @@ const useWordle = ({solution}) => {
   //game over state
   const [isCorrect, setIsCorrect] = useState(false);
 
+  //track which letters have been guessed
+  const [usedKeys, setUsedKeys] = useState({});
+
   //methods of recurring game logic
   
   const formatGuess = () => {
@@ -70,9 +73,31 @@ const useWordle = ({solution}) => {
       return prevtTurn + 1;
     })
 
+    setUsedKeys(prevUsedKeys => {
+      formattedGuess.forEach(letter => {
+        const currentColor = prevUsedKeys[letter.key]
+
+        if(letter.color === 'green'){
+          return
+        }
+
+        if(letter.color === 'yellow' && currentColor !== 'green'){
+          prevUsedKeys[letter.key] = 'yellow'
+          return
+        }
+
+        if(letter.color === 'gray' && currentColor !== ('green' || 'yellow')) {
+          prevUsedKeys[letter.key] = 'grey'
+          return
+        }
+      })
+
+      return prevUsedKeys
+    })
+
     setCurrentGuess('');
 
-    //formatGuess();
+    
   }
     
   
@@ -81,7 +106,7 @@ const useWordle = ({solution}) => {
     //function to handle key events, track current guess, trigger addNewGuess
   }
 
-  return {turn, currentGuess, guesses, history, isCorrect, handleKeyup}
+  return {turn, currentGuess, guesses, history, isCorrect, handleKeyup, usedKeys}
 }
 
 export default useWordle
