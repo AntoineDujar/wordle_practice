@@ -6,7 +6,7 @@ import Keyboard from './Keyboard';
 export default function Wordle ({ solution }) {
 
   //destructuring what we need from the hook
-  const { currentGuess, handleKeyup, guesses, turn, isCorrect } = useWordle(solution);
+  const { currentGuess, handleKeyup, guesses, turn, isCorrect, usedKeys } = useWordle(solution);
   const [input, setInput] = useState('');
 
   // Handling physical keyboard input, use regular expression to filter non letters
@@ -39,7 +39,7 @@ export default function Wordle ({ solution }) {
   return (
     <div>
       <Grid guesses={guesses} currentGuess={currentGuess} turn={turn} />
-      <Keyboard input={input} setInput={setInput} />
+      <Keyboard input={input} setInput={setInput} usedKeys={usedKeys} />
     </div>
   )
 }
