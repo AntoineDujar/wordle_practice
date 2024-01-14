@@ -14,7 +14,7 @@ const Keyboard = ({ input, setInput }) => {
   }
   const row2 = {
     id: 2,
-    content: ['z', 'x', 'c', 'v', 'b', 'n', 'm']
+    content: ['ENTER','z', 'x', 'c', 'v', 'b', 'n', 'm', 'BACKSPACE']
   }
   const qwertyKeyboard = [row0, row1, row2]
 

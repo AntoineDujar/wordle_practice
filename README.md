@@ -43,4 +43,6 @@
 
     command to start json server (can be done in vs code terminal) 
     json-server ./data/db.json --port 3001 (or whatever port you want)
+
+    I added a script "npm run server" as an easier alternative way to start the json-server on port 3001.
 #
