@@ -101,9 +101,34 @@ const useWordle = ({solution}) => {
   }
     
   
-  const handleKeyup = () => {
-    //TO DO:
-    //function to handle key events, track current guess, trigger addNewGuess
+  const handleKeyup = ({ key }) => {
+    if(key === 'Enter'){
+      if(turn > 5){
+        //show modal: you lost, all guesses used
+      }
+
+      if(history.includes(currentGuess)){
+        //show modal: word already guessed
+      }
+
+      if(currentGuess.length !== 5){
+        //show modal: word must be 5 letters
+      }
+
+      const formatted = formatGuess();
+      addNewGuess(formattedGuess);
+    }
+    
+    if (key === 'Backspace'){
+      setCurrentGuess(prev => prev.slice(0, -1))
+      return
+    }
+
+    if(/^[a-Za-z]$/.test(key)){
+      if(currentGuess.legnth < 5){
+        setCurrentGuess(prev => prev + key)
+      }
+    }
   }
 
   return {turn, currentGuess, guesses, history, isCorrect, handleKeyup, usedKeys}
