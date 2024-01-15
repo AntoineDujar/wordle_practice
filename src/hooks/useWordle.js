@@ -81,6 +81,8 @@ const useWordle = ( solution ) => {
 
     //update used keys array for all letters in current guess
     setUsedKeys(prevUsedKeys => {
+
+      //map over letters of guess
       formattedGuess.forEach(letter => {
         const currentColor = prevUsedKeys[letter.key]
 
