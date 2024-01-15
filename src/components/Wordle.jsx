@@ -7,10 +7,9 @@ export default function Wordle ({ solution }) {
 
   //destructuring what we need from the hook
   const { currentGuess, handleKeyup, guesses, turn, isCorrect, usedKeys } = useWordle(solution);
-  const [input, setInput] = useState('');
 
   // Handling physical keyboard input, use regular expression to filter non letters
-  const handleKeyPress = (event) => {
+  /*const handleKeyPress = (event) => {
     const keyPressed = event.key
     const isAlpha = /^[a-zA-Z]$/;
     // if it is a letter, add it to the hook
@@ -26,16 +25,16 @@ export default function Wordle ({ solution }) {
     //guess appears on current row
     //check for duplicate words
 
-  };
+  };*/
 
   //event listener for key events
   useEffect(() => {
-    document.addEventListener('keydown', handleKeyPress);
+    document.addEventListener('keydown', handleKeyup);
 
     return () => {
-      document.removeEventListener('keydown', handleKeyPress);
+      document.removeEventListener('keydown', handleKeyup);
     };
-  }, [input])
+  }, [handleKeyup])
   return (
     <div>
       <Grid guesses={guesses} currentGuess={currentGuess} turn={turn} />
