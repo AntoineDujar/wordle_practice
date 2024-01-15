@@ -127,7 +127,8 @@ const useWordle = ( solution ) => {
         //show modal: word must be 5 letters
       }
 
-      const formatted = formatGuess();
+      console.log("currentGuess: ", currentGuess)
+      const formatted = formatGuess(currentGuess);
       console.log('format guess fired')
       addNewGuess(formatted);
       console.log('add new guess fired')
