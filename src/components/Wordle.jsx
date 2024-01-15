@@ -19,10 +19,6 @@ export default function Wordle ({ solution }) {
     }
 
     // TODO:
-    //check if enter press
-    // if so, addNewGuess
-    //check length of word
-    //guess appears on current row
     //check for duplicate words
 
   };*/
