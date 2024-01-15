@@ -37,7 +37,7 @@ const useWordle = ({solution}) => {
     formattedGuess.forEach((l, index) => {
       if(solution[index] === l.key){
         formattedGuess[index].color = 'green';
-        solutionArray[i] = null;
+        solutionArray[index] = null;
       }
     })
 
@@ -55,24 +55,30 @@ const useWordle = ({solution}) => {
   
   //adds current guess to guesses array, checks history for duplicates, calls format guess to tile colours
   const addNewGuess = (formattedGuess) => {
+    
+    //game over is current guess is solution
     if(currentGuess === solution){
       setIsCorrect(true);
     }
 
+    //create 
     setGuesses(prevGuesses => {
       let newGuesses = [...prevGuesses]
       newGuesses[turn] = formattedGuess;
       return newGuesses
     })
 
+    //add current guess to history
     setHistory(prevHistory => {
       return [...prevHistory, currentGuess];
     })
 
+    //increment turn counter
     setTurn(prevtTurn => {
       return prevtTurn + 1;
     })
 
+    //update used keys array for all letters in current guess
     setUsedKeys(prevUsedKeys => {
       formattedGuess.forEach(letter => {
         const currentColor = prevUsedKeys[letter.key]
@@ -116,7 +122,7 @@ const useWordle = ({solution}) => {
       }
 
       const formatted = formatGuess();
-      addNewGuess(formattedGuess);
+      addNewGuess(formatted);
     }
     
     if (key === 'Backspace'){
@@ -124,8 +130,8 @@ const useWordle = ({solution}) => {
       return
     }
 
-    if(/^[a-Za-z]$/.test(key)){
-      if(currentGuess.legnth < 5){
+    if(/^[a-zA-z]$/.test(key)){
+      if(currentGuess.length < 5){
         setCurrentGuess(prev => prev + key)
       }
     }

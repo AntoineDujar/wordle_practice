@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import './App.css';
-import { Grid, Keyboard, Row, Modal, Wordle } from './components';
+import { Wordle } from './components';
 
 function App() {
 
@@ -17,7 +17,7 @@ function App() {
     })
   }, [setSolution])
 
-  let input = ""
+  //let input = ""
 
   return (
     <div className='App'>
