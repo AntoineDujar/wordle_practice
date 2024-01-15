@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const useWordle = ({solution}) => {
+const useWordle = ( solution ) => {
 
   //our states for game logic
 
@@ -24,7 +24,7 @@ const useWordle = ({solution}) => {
 
   //methods of recurring game logic
   
-  const formatGuess = () => {
+  const formatGuess = (currentGuess) => {
     //spread solution into temp container
     let solutionArray = [...solution];
 
@@ -56,6 +56,7 @@ const useWordle = ({solution}) => {
   //adds current guess to guesses array, checks history for duplicates, calls format guess to tile colours
   const addNewGuess = (formattedGuess) => {
     
+    console.log("current guess is: " + currentGuess)
     //game over is current guess is solution
     if(currentGuess === solution){
       setIsCorrect(true);
@@ -108,7 +109,10 @@ const useWordle = ({solution}) => {
     
   
   const handleKeyup = ({ key }) => {
+    console.log("Key pressed is: " + key)
+    console.log("in use wordle: " + solution + " is a " + typeof solution)
     if(key === 'Enter'){
+      
       if(turn > 5){
         //show modal: you lost, all guesses used
       }
@@ -122,7 +126,9 @@ const useWordle = ({solution}) => {
       }
 
       const formatted = formatGuess();
+      console.log('format guess fired')
       addNewGuess(formatted);
+      console.log('add new guess fired')
     }
     
     if (key === 'Backspace'){

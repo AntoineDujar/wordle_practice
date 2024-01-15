@@ -8,14 +8,14 @@ function App() {
   const [solution, setSolution] = useState('smart');
 
   //fetch a random word from json server
-  useEffect(() => {
+  /*useEffect(() => {
   fetch('http://localhost:3001/solutions')
     .then(res => res.json())
     .then(json =>{
       const randomSolution = json[Math.floor(Math.random() * json.length)]
       setSolution(randomSolution);
     })
-  }, [setSolution])
+  }, [setSolution])*/
 
   //let input = ""
 

@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import useWordle from '../hooks/useWordle';
 import Grid from './Grid';
 import Keyboard from './Keyboard';
@@ -7,6 +7,7 @@ export default function Wordle ({ solution }) {
 
   //destructuring what we need from the hook
   const { currentGuess, handleKeyup, guesses, turn, usedKeys } = useWordle(solution);
+  const [input, setInput] = useState('');
 
   // Handling physical keyboard input, use regular expression to filter non letters
   /*const handleKeyPress = (event) => {
@@ -26,7 +27,7 @@ export default function Wordle ({ solution }) {
   //event listener for key events
   useEffect(() => {
     document.addEventListener('keydown', handleKeyup);
-
+    console.log("in wordle.jsx: " + solution + " is a " + typeof solution)
     return () => {
       document.removeEventListener('keydown', handleKeyup);
     };
@@ -34,7 +35,7 @@ export default function Wordle ({ solution }) {
   return (
     <div>
       <Grid guesses={guesses} currentGuess={currentGuess} turn={turn} />
-      <Keyboard /*input={input} setInput={setInput}*/ usedKeys={usedKeys} />
+      <Keyboard input={input} setInput={setInput} usedKeys={usedKeys} />
     </div>
   )
 }
