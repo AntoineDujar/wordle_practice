@@ -107,30 +107,39 @@ button:focus-visible {
 .row > div.green {
   --background: #5ac05a;
   --border-color: #5ac05c;
-  animation: flip 0.7s ease forwards;
+  animation: flip 0.6s ease forwards;
 }
 
 .row > div.gray {
-  animation: bounce 0.3s ease-in-out forwards;
+  --background: #a1a1a1;
+  --border-color: #a1a1a1;
+  animation: flip 0.6s ease forwards;
+  
+}
+
+.row > div.yellow {
+  --background: #e2cc68;
+  --border-color: #e2cc68;
+  animation: flip 0.6s ease forwards;
 }
 
 .row > div:nth-child(2) {
-  animation-delay: 0.2s;
+  animation-delay: 0.15s;
 }
 .row > div:nth-child(3) {
-  animation-delay: 0.4s;
+  animation-delay: 0.3s;
 }
 .row > div:nth-child(4) {
-  animation-delay: 0.6s;
+  animation-delay: 0.45s;
 }
 .row > div:nth-child(5) {
-  animation-delay: 1.0s;
+  animation-delay: 0.6s;
 }
 
 @keyframes flip{
-  10%{
+  0%{
     transform: rotateX(0);
-    background: #000000;
+    background: #a1a1a1;
     border-color:#fff;
 
   }
