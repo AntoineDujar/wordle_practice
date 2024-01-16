@@ -56,7 +56,6 @@ const useWordle = ( solution ) => {
   //adds current guess to guesses array, checks history for duplicates, calls format guess to tile colours
   const addNewGuess = (formattedGuess) => {
     
-    console.log("current guess is: " + currentGuess)
     //game over is current guess is solution
     if(currentGuess === solution){
       setIsCorrect(true);
