@@ -123,7 +123,8 @@ const useWordle = ( solution ) => {
       }
 
       if(currentGuess.length !== 5){
-        //show modal: word must be 5 letters
+        alert("Your current guess is too short")
+        return
       }
 
       const formatted = formatGuess(currentGuess);
