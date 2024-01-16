@@ -103,3 +103,34 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.row > div.green {
+  --background: #5ac05a;
+  --border-color: #242424;
+  animation: flip 0.7s ease forwards;
+}
+
+@keyframes flip{
+  0%{
+    transform: rotateX(0);
+    background: #000000;
+    border-color:#fff;
+
+  }
+  35%{
+    transform: rotateX(90deg);
+    background: black;
+    border-color:#fff;
+  }
+  65%{
+    transform: rotateX(90deg);
+    background: var(--background);
+    border-color: var(--border-color);
+  }
+  100%{
+    transform: rotateX(0deg);
+    background: var(--background);
+    border-color: var(--border-color);
+    color: #eee
+  }
+}
