@@ -110,7 +110,7 @@ const useWordle = ( solution ) => {
     
   
   const handleKeyup = ({ key }) => {
-    
+    console.log('key:', key)
     if(key === 'Enter'){
       
       if(turn > 5){
@@ -142,7 +142,7 @@ const useWordle = ( solution ) => {
     }
   }
 
-  return {turn, currentGuess, guesses, history, isCorrect, handleKeyup, usedKeys}
+  return {turn, currentGuess, setCurrentGuess, guesses, history, isCorrect, handleKeyup, usedKeys}
 }
 
 export default useWordle

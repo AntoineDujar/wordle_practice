@@ -22,17 +22,15 @@ const Keyboard = ({ input, setInput }) => {
 
   return (
     <>
-      <p>keyboard input: {input}</p>
-      
       {qwertyKeyboard.map((row) => (
         <div key={row.id}>
           {row.content.map((letter) => (
             <button key={letter} onClick={() => {if (letter != 'ENTER' && letter !== 'BACKSPACE' ){
               setInput(input + letter)
             } else if (letter == 'BACKSPACE') {
-              setInput(input.substring(0, input.length - 1))
+              setInput("Backspace")
             } else {
-              setInput(input + letter)
+              setInput("Enter")
             }
             }}>
               {letter}
@@ -40,7 +38,6 @@ const Keyboard = ({ input, setInput }) => {
           ))}
         </div>
       ))}
-      <button onClick={()=>{setInput('')}}>reset</button>
     </>
   )
 }

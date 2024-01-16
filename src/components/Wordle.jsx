@@ -6,7 +6,7 @@ import Keyboard from './Keyboard';
 export default function Wordle ({ solution }) {
 
   //destructuring what we need from the hook
-  const { currentGuess, handleKeyup, guesses, turn, usedKeys } = useWordle(solution);
+  const { currentGuess, setCurrentGuess, handleKeyup, guesses, turn, usedKeys } = useWordle(solution);
   const [input, setInput] = useState('');
 
   // Handling physical keyboard input, use regular expression to filter non letters
@@ -25,6 +25,14 @@ export default function Wordle ({ solution }) {
   };*/
 
   //event listener for key events
+
+  useEffect(() => {
+    console.log("input", input)
+    handleKeyup({key: input})
+    setInput('')
+   }, [input]);
+
+  
   useEffect(() => {
     document.addEventListener('keydown', handleKeyup);
     return () => {
