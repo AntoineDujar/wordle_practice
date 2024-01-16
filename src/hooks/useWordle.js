@@ -111,8 +111,7 @@ const useWordle = ( solution ) => {
     
   
   const handleKeyup = ({ key }) => {
-    console.log("Key pressed is: " + key)
-    console.log("in use wordle: " + solution + " is a " + typeof solution)
+    
     if(key === 'Enter'){
       
       if(turn > 5){
@@ -127,11 +126,8 @@ const useWordle = ( solution ) => {
         //show modal: word must be 5 letters
       }
 
-      console.log("currentGuess: ", currentGuess)
       const formatted = formatGuess(currentGuess);
-      console.log('format guess fired')
       addNewGuess(formatted);
-      console.log('add new guess fired')
     }
     
     if (key === 'Backspace'){

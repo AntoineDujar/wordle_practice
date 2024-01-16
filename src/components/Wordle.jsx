@@ -27,7 +27,6 @@ export default function Wordle ({ solution }) {
   //event listener for key events
   useEffect(() => {
     document.addEventListener('keydown', handleKeyup);
-    console.log("in wordle.jsx: " + solution + " is a " + typeof solution)
     return () => {
       document.removeEventListener('keydown', handleKeyup);
     };
