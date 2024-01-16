@@ -32,7 +32,7 @@ const Keyboard = ({ input, setInput }) => {
             } else {
               setInput("Enter")
             }
-            }}>
+            }} >
               {letter}
             </button>
           ))}

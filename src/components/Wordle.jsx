@@ -27,7 +27,6 @@ export default function Wordle ({ solution }) {
   //event listener for key events
 
   useEffect(() => {
-    console.log("input", input)
     handleKeyup({key: input})
     setInput('')
    }, [input]);

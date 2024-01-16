@@ -110,7 +110,6 @@ const useWordle = ( solution ) => {
     
   
   const handleKeyup = ({ key }) => {
-    console.log('key:', key)
     if(key === 'Enter'){
       
       if(turn > 5){
