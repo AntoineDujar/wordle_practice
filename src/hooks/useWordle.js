@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { Children, useState } from 'react';
 
 const useWordle = ( solution ) => {
 
@@ -80,7 +80,6 @@ const useWordle = ( solution ) => {
 
     //update used keys array for all letters in current guess
     setUsedKeys(prevUsedKeys => {
-
       //map over letters of guess
       formattedGuess.forEach(letter => {
         const currentColor = prevUsedKeys[letter.key]
@@ -99,13 +98,24 @@ const useWordle = ( solution ) => {
           return
         }
       })
-
+      
+      let allGreen = true;
+      formattedGuess.forEach(letter => {
+        if(letter.color !== 'green') {
+          allGreen = false;
+        }
+      })
+      console.log(allGreen)
+      if (allGreen) {
+        alert("Your guess is correct!")
+        setCurrentGuess('');
+        return
+      }
       return prevUsedKeys
     })
 
     setCurrentGuess('');
 
-    
   }
     
   
@@ -127,6 +137,8 @@ const useWordle = ( solution ) => {
 
       const formatted = formatGuess(currentGuess);
       addNewGuess(formatted);
+
+
     }
     
     if (key === 'Backspace'){
